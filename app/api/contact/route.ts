@@ -18,11 +18,11 @@ ${message}`;
     const to = process.env.CONTACT_EMAIL || 'mesaye2010@gmail.com';
 
     // Try Resend if configured
-    if (process.env.RESEND_API_KEY) {
+    if (true) {
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          Authorization: `Bearer re_SUkp7bVi_4AVHYT5HA1qtSWMWQELMdi9D`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({

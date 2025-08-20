@@ -1,39 +1,75 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { IconType } from 'react-icons';
+import {
+  SiPython,
+  SiDjango,
+  SiFastapi,
+  SiNodedotjs,
+  SiSpringboot,
+  SiAmazonwebservices,
+  SiDocker,
+  SiGithubactions,
+  SiGit,
+  SiKubernetes,
+  SiPostgresql,
+  SiMysql,
+  SiApachesuperset,
+  SiRedis,
+  SiApachekafka,
+} from 'react-icons/si';
 
 const skillCategories = [
   {
     title: 'Backend & APIs',
     skills: [
-      { name: 'Python', icon: '🐍' },
-      { name: 'Django', icon: '🎸' },
-      { name: 'FastAPI', icon: '⚡' },
-      { name: 'Node.js', icon: '🟢' },
-      { name: 'Spring Boot', icon: '🌱' },
+      { name: 'Python' },
+      { name: 'Django' },
+      { name: 'FastAPI' },
+      { name: 'Node.js' },
+      { name: 'Spring Boot' },
     ],
   },
   {
     title: 'Cloud & DevOps',
     skills: [
-      { name: 'AWS', icon: '☁️' },
-      { name: 'Docker', icon: '🐳' },
-      { name: 'CI/CD', icon: '🔄' },
-      { name: 'Git', icon: '📝' },
-      { name: 'Kubernetes', icon: '⚙️' },
+      { name: 'AWS' },
+      { name: 'Docker' },
+      { name: 'CI/CD' },
+      { name: 'Git' },
+      { name: 'Kubernetes' },
     ],
   },
   {
     title: 'Databases & Tools',
     skills: [
-      { name: 'PostgreSQL', icon: '🐘' },
-      { name: 'MySQL', icon: '🗄️' },
-      { name: 'Superset', icon: '📊' },
-      { name: 'Redis', icon: '🧠' },
-      { name: 'Kafka', icon: '📈' },
+      { name: 'PostgreSQL' },
+      { name: 'MySQL' },
+      { name: 'Superset' },
+      { name: 'Redis' },
+      { name: 'Kafka' },
     ],
   },
 ];
+
+const iconMap: Record<string, IconType> = {
+  Python: SiPython,
+  Django: SiDjango,
+  FastAPI: SiFastapi,
+  'Node.js': SiNodedotjs,
+  'Spring Boot': SiSpringboot,
+  AWS: SiAmazonwebservices,
+  Docker: SiDocker,
+  'CI/CD': SiGithubactions,
+  Git: SiGit,
+  Kubernetes: SiKubernetes,
+  PostgreSQL: SiPostgresql,
+  MySQL: SiMysql,
+  Superset: SiApachesuperset,
+  Redis: SiRedis,
+  Kafka: SiApachekafka,
+};
 
 export default function Skills() {
   return (
@@ -67,24 +103,33 @@ export default function Skills() {
               </h3>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: categoryIndex * 0.15 + skillIndex * 0.05,
-                    }}
-                    viewport={{ once: true }}
-                    className="bg-gray-700/40 rounded-lg py-2 px-3 flex items-center justify-center gap-2 hover:bg-gray-700 transition-colors"
-                  >
-                    <span className="text-lg leading-none">{skill.icon}</span>
-                    <span className="text-sm font-medium text-white">
-                      {skill.name}
-                    </span>
-                  </motion.div>
-                ))}
+                {category.skills.map((skill, skillIndex) => {
+                  const Icon = iconMap[skill.name as keyof typeof iconMap];
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: categoryIndex * 0.15 + skillIndex * 0.05,
+                      }}
+                      viewport={{ once: true }}
+                      className="bg-gray-700/40 rounded-lg py-2 px-3 flex items-center justify-center gap-2 hover:bg-gray-700 transition-colors"
+                    >
+                      {Icon ? (
+                        <Icon size={18} aria-hidden className="shrink-0" />
+                      ) : (
+                        <span className="text-lg leading-none" aria-hidden>
+                          •
+                        </span>
+                      )}
+                      <span className="text-sm font-medium text-white">
+                        {skill.name}
+                      </span>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

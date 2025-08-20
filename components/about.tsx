@@ -2,17 +2,41 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { IconType } from 'react-icons';
+import {
+  SiPython,
+  SiDjango,
+  SiFastapi,
+  SiNodedotjs,
+  SiSpringboot,
+  SiAmazonaws,
+  SiDocker,
+  SiPostgresql,
+  SiMysql,
+} from 'react-icons/si';
 
 const techStack = [
-  { name: 'Python', icon: '🐍' },
-  { name: 'Django', icon: '🎸' },
-  { name: 'FastAPI', icon: '⚡' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'Spring Boot', icon: '🌱' },
-  { name: 'AWS', icon: '☁️' },
-  { name: 'Docker', icon: '🐳' },
-  { name: 'PostgreSQL / MySQL', icon: '🗄️' },
+  { name: 'Python' },
+  { name: 'Django' },
+  { name: 'FastAPI' },
+  { name: 'Node.js' },
+  { name: 'Spring Boot' },
+  { name: 'AWS' },
+  { name: 'Docker' },
+  { name: 'PostgreSQL / MySQL' },
 ];
+
+const iconMap: Record<string, IconType> = {
+  Python: SiPython,
+  Django: SiDjango,
+  FastAPI: SiFastapi,
+  'Node.js': SiNodedotjs,
+  'Spring Boot': SiSpringboot,
+  AWS: SiAmazonaws,
+  Docker: SiDocker,
+  PostgreSQL: SiPostgresql,
+  MySQL: SiMysql,
+};
 
 export default function About() {
   return (
@@ -78,19 +102,31 @@ export default function About() {
                 Tech Stack
               </h3>
               <div className="grid grid-cols-4 gap-4">
-                {techStack.map((tech, index) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-gray-700/50 rounded-2xl p-4 text-center hover:bg-gray-700 transition-colors duration-300 card-hover"
-                  >
-                    <div className="text-2xl mb-2">{tech.icon}</div>
-                    <div className="text-sm font-medium">{tech.name}</div>
-                  </motion.div>
-                ))}
+                {techStack.map((tech, index) => {
+                  const baseName = tech.name.includes('/')
+                    ? tech.name.split('/')[0].trim()
+                    : tech.name;
+                  const Icon = iconMap[baseName as keyof typeof iconMap];
+                  return (
+                    <motion.div
+                      key={tech.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-gray-700/50 rounded-2xl p-4 text-center hover:bg-gray-700 transition-colors duration-300 card-hover"
+                    >
+                      {Icon ? (
+                        <Icon size={22} aria-hidden className="mx-auto mb-2" />
+                      ) : (
+                        <span className="text-2xl mb-2" aria-hidden>
+                          •
+                        </span>
+                      )}
+                      <div className="text-sm font-medium">{tech.name}</div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
