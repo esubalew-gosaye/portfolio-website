@@ -26,11 +26,11 @@ const projects = [
     live: 'https://dxvalley.com/',
   },
   {
-    title: 'Analytics Dashboard',
+    title: 'OKR tool',
     description:
-      'Real-time analytics dashboard for business intelligence. Built with React, D3.js for visualizations, and Python backend for data processing.',
-    image: '/images/analytics-dashboard.png',
-    tags: ['React', 'D3.js', 'Python', 'FastAPI', 'Redis'],
+      'OKR tool is a tool that helps you set and track your goals and objectives. It is a tool that helps you set and track your goals and objectives.',
+    image: '/images/okr-tool.png',
+    tags: ['SpringBoot', 'Angular', 'Postgres', 'Docker', 'Redis', "BurningOKR"],
     github: '#',
     live: '#',
   },
@@ -40,7 +40,7 @@ const projects = [
       'RESTful API for social media platform with user management, posts, comments, and real-time notifications. Built with Node.js and GraphQL.',
     image: '/images/social-api.png',
     tags: ['Node.js', 'GraphQL', 'MongoDB', 'Socket.io', 'JWT'],
-    github: '#',
+    github: 'https://github.com/esubalew-gosaye/social-media-backend',
     live: '#',
   },
 ];
