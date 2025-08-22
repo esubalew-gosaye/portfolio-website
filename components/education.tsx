@@ -51,7 +51,7 @@ export default function Education() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-700/30 rounded-2xl p-6 card-hover"
+              className="bg-muted/30 rounded-2xl p-6 card-hover"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
@@ -64,11 +64,11 @@ export default function Education() {
                   </h4>
                 </div>
                 <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                  <div className="flex items-center text-gray-300 mb-1">
+                  <div className="flex items-center text-muted-foreground mb-1">
                     <Calendar className="h-4 w-4 mr-2" />
                     <span className="text-sm">{edu.period}</span>
                   </div>
-                  <div className="flex items-center text-gray-300">
+                  <div className="flex items-center text-muted-foreground">
                     <MapPin className="h-4 w-4 mr-2" />
                     <span className="text-sm">{edu.location}</span>
                   </div>
@@ -77,7 +77,10 @@ export default function Education() {
 
               <ul className="space-y-2">
                 {edu.details.map((d, i) => (
-                  <li key={i} className="text-gray-300 flex items-start">
+                  <li
+                    key={i}
+                    className="text-muted-foreground flex items-start"
+                  >
                     <span className="text-teal-400 mr-3 mt-2">•</span>
                     <span>{d}</span>
                   </li>

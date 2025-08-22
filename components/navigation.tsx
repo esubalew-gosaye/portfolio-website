@@ -18,7 +18,12 @@ const navItems = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +45,7 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-800'
+          ? 'bg-background/95 backdrop-blur-md border-b border-border'
           : 'bg-transparent'
       }`}
     >
@@ -61,7 +66,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium"
+                className="text-foreground hover:text-teal-400 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </button>
@@ -70,10 +75,12 @@ export default function Navigation() {
               variant="ghost"
               size="icon"
               aria-label="Toggle theme"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="text-gray-300 hover:text-teal-400"
+              onClick={() =>
+                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              }
+              className="text-foreground hover:text-teal-400"
             >
-              {theme === 'dark' ? (
+              {mounted && resolvedTheme === 'dark' ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
@@ -87,7 +94,7 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-teal-400"
+              className="text-foreground hover:text-teal-400"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -104,13 +111,13 @@ export default function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-gray-800/95 backdrop-blur-md rounded-2xl mt-2 p-4"
+            className="md:hidden bg-card/95 backdrop-blur-md rounded-2xl mt-2 p-4"
           >
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-3 px-4 text-gray-300 hover:text-teal-400 hover:bg-gray-700/50 rounded-xl transition-all duration-300"
+                className="block w-full text-left py-3 px-4 text-foreground hover:text-teal-400 hover:bg-muted/50 rounded-xl transition-all duration-300"
               >
                 {item.name}
               </button>
@@ -118,10 +125,12 @@ export default function Navigation() {
             <div className="pt-2">
               <Button
                 variant="ghost"
-                className="w-full justify-start text-gray-300 hover:text-teal-400"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="w-full justify-start text-foreground hover:text-teal-400"
+                onClick={() =>
+                  setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+                }
               >
-                {theme === 'dark' ? (
+                {mounted && resolvedTheme === 'dark' ? (
                   <>
                     <Sun className="h-5 w-5 mr-2" /> Switch to Light
                   </>

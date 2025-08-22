@@ -27,7 +27,7 @@ const awards = [
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-20 section-padding bg-gray-800/50">
+    <section id="achievements" className="py-20 section-padding bg-muted/50">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,7 +48,7 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-700/30 rounded-2xl p-6 card-hover"
+            className="bg-muted/30 rounded-2xl p-6 card-hover"
           >
             <h3 className="text-xl font-semibold mb-4 flex items-center">
               <Shield className="h-5 w-5 text-teal-400 mr-2" />
@@ -62,7 +62,10 @@ export default function Achievements() {
                 </div>
                 <ul className="mt-2 space-y-1">
                   {c.highlights.map((h, i) => (
-                    <li key={i} className="text-gray-300 flex items-start">
+                    <li
+                      key={i}
+                      className="text-muted-foreground flex items-start"
+                    >
                       <span className="text-teal-400 mr-3 mt-2">•</span>
                       <span>{h}</span>
                     </li>
@@ -87,7 +90,7 @@ export default function Achievements() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gray-700/30 rounded-2xl p-6 card-hover"
+            className="bg-muted/30 rounded-2xl p-6 card-hover"
           >
             <h3 className="text-xl font-semibold mb-4 flex items-center">
               <Award className="h-5 w-5 text-teal-400 mr-2" />

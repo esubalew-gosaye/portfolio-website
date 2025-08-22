@@ -78,7 +78,7 @@ export default function Contact() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can work together!
           </p>
@@ -103,7 +103,7 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-gray-700/30 border-gray-600 rounded-2xl card-hover">
+                <Card className="bg-muted/30 border-border rounded-2xl card-hover">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="bg-teal-600/20 p-3 rounded-2xl">
@@ -115,7 +115,7 @@ export default function Contact() {
                         </h4>
                         <a
                           href={info.href}
-                          className="text-gray-300 hover:text-teal-400 transition-colors duration-300"
+                          className="text-muted-foreground hover:text-teal-400 transition-colors duration-300"
                         >
                           {info.value}
                         </a>
@@ -134,29 +134,29 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gray-700/30 border-gray-600 rounded-2xl">
+            <Card className="bg-muted/30 border-border rounded-2xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-muted-foreground mb-2">
                         First Name
                       </label>
                       <Input
-                        className="bg-gray-800 border-gray-600 text-white rounded-xl focus:border-teal-400"
+                        className="bg-background border-border text-foreground rounded-xl focus:border-teal-400"
                         placeholder="John"
                         name="firstName"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-2">
+                      <label className="block text-sm font-medium text-muted-foreground mb-2">
                         Last Name
                       </label>
                       <Input
-                        className="bg-gray-800 border-gray-600 text-white rounded-xl focus:border-teal-400"
+                        className="bg-background border-border text-foreground rounded-xl focus:border-teal-400"
                         placeholder="Doe"
                         name="lastName"
                         required
@@ -165,23 +165,23 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                       Email
                     </label>
                     <Input
                       type="email"
-                      className="bg-gray-800 border-gray-600 text-white rounded-xl focus:border-teal-400"
+                      className="bg-background border-border text-foreground rounded-xl focus:border-teal-400"
                       placeholder="john.doe@example.com"
                       name="email"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
                       Message
                     </label>
                     <Textarea
-                      className="bg-gray-800 border-gray-600 text-white rounded-xl focus:border-teal-400 min-h-[120px]"
+                      className="bg-background border-border text-foreground rounded-xl focus:border-teal-400 min-h-[120px]"
                       placeholder="Tell me about your project..."
                       name="message"
                       required

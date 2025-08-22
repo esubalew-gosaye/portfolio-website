@@ -19,7 +19,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="py-16 section-padding border-t border-gray-800 bg-gray-900/80">
+    <footer className="py-16 section-padding border-t border-border bg-muted/80">
       <div className="container-max">
         <div className="grid md:grid-cols-4 gap-10">
           <motion.div
@@ -31,7 +31,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold gradient-text mb-2">
               Esubalew Gosaye
             </h3>
-            <p className="text-gray-400">Software Developer</p>
+            <p className="text-muted-foreground">Software Developer</p>
             <div className="flex space-x-3 mt-6">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -41,7 +41,7 @@ export default function Footer() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800 p-2.5 rounded-xl hover:bg-teal-600 transition-colors"
+                  className="bg-muted p-2.5 rounded-xl hover:bg-teal-600 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -57,7 +57,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li>
                 <a href="#about" className="hover:text-teal-400">
                   About
@@ -93,7 +93,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="font-semibold mb-4 text-white">Contact</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-muted-foreground">
               <li>
                 <a
                   href="mailto:mesaye2010@gmail.com"
@@ -118,7 +118,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h4 className="font-semibold mb-4 text-white">Availability</h4>
-            <p className="text-gray-400">
+            <p className="text-muted-foreground">
               Open to full-time roles and freelance projects.
             </p>
             <a
@@ -135,9 +135,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800 pt-8 mt-12 text-center"
+          className="border-t border-border pt-8 mt-12 text-center"
         >
-          <p className="text-gray-400">
+          <p className="text-muted-foreground">
             © {new Date().getFullYear()} Esubalew Gosaye. All rights reserved.
           </p>
         </motion.div>

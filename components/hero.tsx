@@ -16,7 +16,7 @@ export default function Hero() {
     >
       {/* Tech Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-muted to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1)_0%,transparent_50%)] opacity-40"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -40,7 +40,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6"
+            className="text-5xl md:text-7xl font-bold mb-6 text-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2
-            className="text-2xl md:text-3xl text-gray-300 mb-4"
+            className="text-2xl md:text-3xl text-muted-foreground mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -58,7 +58,7 @@ export default function Hero() {
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}

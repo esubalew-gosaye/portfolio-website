@@ -40,7 +40,7 @@ const iconMap: Record<string, IconType> = {
 
 export default function About() {
   return (
-    <section id="about" className="py-20 section-padding bg-gray-800/50">
+    <section id="about" className="py-20 section-padding bg-muted/50">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -83,17 +83,17 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg leading-relaxed text-foreground/80 dark:text-muted-foreground">
               I'm a Software Developer based in Addis Ababa with experience
               building scalable backend systems and robust APIs. I specialize in
               Python (Django), FastAPI, Node.js, and Spring Boot, and I enjoy
               solving complex problems with clean, maintainable code.
             </p>
 
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg leading-relaxed text-foreground/80 dark:text-muted-foreground">
               I have hands-on experience with cloud infrastructure on AWS,
               containerization with Docker, relational databases like PostgreSQL
-              and MySQL, and CI/CD practices. I’m also active in competitive
+              and MySQL, and CI/CD practices. I'm also active in competitive
               programming and DSA, which sharpens my problem-solving skills.
             </p>
 
@@ -114,7 +114,7 @@ export default function About() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="bg-gray-700/50 rounded-2xl p-4 text-center hover:bg-gray-700 transition-colors duration-300 card-hover"
+                      className="bg-muted/50 rounded-2xl p-4 text-center hover:bg-muted transition-colors duration-300 card-hover"
                     >
                       {Icon ? (
                         <Icon size={22} aria-hidden className="mx-auto mb-2" />

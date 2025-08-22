@@ -41,12 +41,11 @@ const experiences = [
     ],
     link: 'https://a2sv.org/',
   },
-
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 section-padding bg-gray-800/50">
+    <section id="experience" className="py-20 section-padding bg-muted/50">
       <div className="container-max">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,7 +78,7 @@ export default function Experience() {
               {/* Timeline dot */}
               <div className="absolute left-4 top-8 w-4 h-4 bg-teal-400 rounded-full border-4 border-gray-900"></div>
 
-              <div className="ml-16 bg-gray-700/30 rounded-2xl p-6 card-hover">
+              <div className="ml-16 bg-muted/30 rounded-2xl p-6 card-hover">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-1">
@@ -90,11 +89,11 @@ export default function Experience() {
                     </h4>
                   </div>
                   <div className="flex flex-col md:items-end mt-2 md:mt-0">
-                    <div className="flex items-center text-gray-300 mb-1">
+                    <div className="flex items-center text-muted-foreground mb-1">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="text-sm">{exp.period}</span>
                     </div>
-                    <div className="flex items-center text-gray-300">
+                    <div className="flex items-center text-muted-foreground">
                       <MapPin className="h-4 w-4 mr-2" />
                       <span className="text-sm">{exp.location}</span>
                     </div>
@@ -103,7 +102,10 @@ export default function Experience() {
 
                 <ul className="space-y-2">
                   {exp.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="text-gray-300 flex items-start">
+                    <li
+                      key={idx}
+                      className="text-muted-foreground flex items-start"
+                    >
                       <span className="text-teal-400 mr-3 mt-2">•</span>
                       <span>{responsibility}</span>
                     </li>

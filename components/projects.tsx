@@ -12,7 +12,15 @@ const projects = [
     description:
       'Tele Hakim is a project that connects patients and doctors remotely from the comfort of your home. It has video, audio, and text communication, and it will also include a system that recommends doctors based on the symptoms you provide for those who don’t know whom to pick.',
     image: '/images/telehakim.png',
-    tags: ['Python', 'Django', 'React', 'WebSocket', 'Postgres', 'Agora', 'Github'],
+    tags: [
+      'Python',
+      'Django',
+      'React',
+      'WebSocket',
+      'Postgres',
+      'Agora',
+      'Github',
+    ],
     github: 'https://github.com/Nolawi-Tech/TeleHakim',
     live: '#',
   },
@@ -21,7 +29,7 @@ const projects = [
     description:
       'DxValley is a physical space designed to nurture innovation in a particular field. It brings together researchers, creators, and innovators to nurture ideas into industry-changing products and services.',
     image: '/images/dx-valley.png',
-    tags: ['Next', "CMS", 'PostgreSQL', 'STRAPI'],
+    tags: ['Next', 'CMS', 'PostgreSQL', 'STRAPI'],
     github: '#',
     live: 'https://dxvalley.com/',
   },
@@ -30,7 +38,14 @@ const projects = [
     description:
       'OKR tool is a tool that helps you set and track your goals and objectives. It is a tool that helps you set and track your goals and objectives.',
     image: '/images/okr-tool.png',
-    tags: ['SpringBoot', 'Angular', 'Postgres', 'Docker', 'Redis', "BurningOKR"],
+    tags: [
+      'SpringBoot',
+      'Angular',
+      'Postgres',
+      'Docker',
+      'Redis',
+      'BurningOKR',
+    ],
     github: '#',
     live: '#',
   },
@@ -71,7 +86,7 @@ export default function Projects() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-gray-800/50 border-gray-700 rounded-2xl overflow-hidden card-hover">
+              <Card className="bg-card border-border rounded-2xl overflow-hidden card-hover">
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={project.image || '/placeholder.svg'}
@@ -81,10 +96,10 @@ export default function Projects() {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 text-white">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">
                     {project.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 leading-relaxed">
+                  <p className="mb-4 leading-relaxed text-foreground/80 dark:text-muted-foreground">
                     {project.description}
                   </p>
 
@@ -104,7 +119,7 @@ export default function Projects() {
                       asChild
                       variant="outline"
                       size="sm"
-                      className="border-gray-600 text-gray-300 hover:bg-gray-700 bg-transparent"
+                      className="border-border text-muted-foreground hover:bg-muted bg-transparent"
                     >
                       <a href={project.github} target="_blank" rel="noreferrer">
                         <Github className="mr-2 h-4 w-4" />

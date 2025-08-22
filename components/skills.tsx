@@ -96,7 +96,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
-              className="bg-gray-800/50 rounded-2xl p-6 card-hover"
+              className="bg-muted/50 rounded-2xl p-6 card-hover"
             >
               <h3 className="text-xl font-semibold mb-6 text-center gradient-text">
                 {category.title}
